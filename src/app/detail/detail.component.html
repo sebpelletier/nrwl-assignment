@@ -2,15 +2,20 @@
     <li>ID: {{currentTicket.id}}</li>
     <li>Description: {{currentTicket.description}}</li>
     <li>Assignee ID: {{currentTicket.assigneeId}}</li>
+    <!-- <li>Assignee: {{getAssignedToName(currentTicket)}}</li> -->
     <li>Completed: {{currentTicket.completed}}</li>
 </ul>
 
 <ng-template #loading>Loading ticket details</ng-template>
 
-List of users
-<ul *ngIf="allUsers">
-
+<ng-container *ngIf="allUsers">
+<h2>Assign to another user</h2>
+<ul *ngFor="let user of allUsers">
+    <li *ngIf="user.id !== currentTicket.assigneeId">{{user.name}} ({{user.id}}) <a (click)="assignToUser(user)">Assign</a></li>
 </ul>
-<a>Assign</a>
-<a (click)="changeStatusToComplete()">Complete</a>
-<a (click)="changeStatusToInProgress()">In Progress</a>
+</ng-container>
+
+<ng-container *ngIf="currentTicket">
+    <a *ngIf="!currentTicket.completed" (click)="changeStatusToComplete()">Complete</a>
+    <a *ngIf="currentTicket.completed" (click)="changeStatusToInProgress()">In Progress</a>
+</ng-container>

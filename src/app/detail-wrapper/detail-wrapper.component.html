@@ -2,7 +2,8 @@
 <app-detail
     [currentTicket]="currentTicket | async"
     [allUsers]="allUsers | async"
-    (changeTicketStatus)="changeTicketStatus($event)">
+    (changeTicketStatus)="changeTicketStatus($event)"
+    (assignToAnotherUser)="assignToUser($event)">
 </app-detail>
 
 <a [routerLink]="'/list'">back to list</a>

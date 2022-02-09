@@ -36,8 +36,13 @@ export class DetailWrapperComponent implements OnInit, OnDestroy {
   }
 
   changeTicketStatus(event: ChangeStatusEvent): void {
-    this.currentTicket = this.backendService.complete(event.ticket.id, event.ticketStatus);
-    // this.fetchTicketDetails(event.ticket.id);
+    this.backendService.complete(event.ticket.id, event.ticketStatus);
+    this.fetchTicketDetails(event.ticket.id);
+  }
+
+  assignToUser(event: any): void {
+    this.backendService.assign(event.ticket.id, event.user.id);
+    this.fetchTicketDetails(event.ticket.id);
   }
 
 }
