@@ -1,8 +1,16 @@
-<ul *ngIf="currentTicket">
+<ul *ngIf="currentTicket; else loading">
     <li>ID: {{currentTicket.id}}</li>
     <li>Description: {{currentTicket.description}}</li>
     <li>Assignee ID: {{currentTicket.assigneeId}}</li>
     <li>Completed: {{currentTicket.completed}}</li>
 </ul>
+
+<ng-template #loading>Loading ticket details</ng-template>
+
+List of users
+<ul *ngIf="allUsers">
+
+</ul>
 <a>Assign</a>
-<a>Complete</a>
+<a (click)="changeStatusToComplete()">Complete</a>
+<a (click)="changeStatusToInProgress()">In Progress</a>

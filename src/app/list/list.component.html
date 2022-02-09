@@ -1,8 +1,13 @@
-<h2>Tickets</h2>
-
-<ul>
-  <li *ngFor="let t of tickets|async">
-    Ticket: {{t.id}}, {{t.description}}
+<ul *ngIf="tickets; else loading">
+  <li *ngFor="let t of tickets">
+    Ticket: {{t.id}}, {{t.description}}, assigned to: {{getAssignedToName(t)}}
     <a [routerLink]="['/detail', t.id]">go to detail</a>
   </li>
 </ul>
+
+<ng-template #loading>loading tickets</ng-template>
+
+<form [formGroup]="formGroup">
+    <input type="text" placeholder="description" formControlName="description">
+</form>
+<a *ngIf="formGroup.valid" (click)="addNewTicket()">Add new ticket</a>

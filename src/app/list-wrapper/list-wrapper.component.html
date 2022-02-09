@@ -1,0 +1,7 @@
+<h2>Tickets</h2>
+
+<app-list
+    [tickets]="tickets"
+    [allUsers]="users | async"
+    (addTicket)="addTicket($event)">
+</app-list>

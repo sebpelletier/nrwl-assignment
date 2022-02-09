@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListComponent } from './list/list.component';
 import { DetailWrapperComponent } from './detail-wrapper/detail-wrapper.component';
+import { ListWrapperComponent } from './list-wrapper/list-wrapper.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/list', pathMatch: 'full' },
-  { path: 'list', component: ListComponent },
+  { path: 'list', component: ListWrapperComponent },
   { path: 'detail/:id', component: DetailWrapperComponent}
 ];
 

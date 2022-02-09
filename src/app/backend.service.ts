@@ -62,6 +62,7 @@ export class BackendService {
   }
 
   users() {
+    console.log('coming here');
     return of(this.storedUsers).pipe(delay(randomDelay()));
   }
 

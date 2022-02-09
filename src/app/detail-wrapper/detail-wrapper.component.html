@@ -1,3 +1,8 @@
-<app-detail [currentTicket]="currentTicket | async"></app-detail>
+<h1>Ticket details</h1>
+<app-detail
+    [currentTicket]="currentTicket | async"
+    [allUsers]="allUsers | async"
+    (changeTicketStatus)="changeTicketStatus($event)">
+</app-detail>
 
 <a [routerLink]="'/list'">back to list</a>
