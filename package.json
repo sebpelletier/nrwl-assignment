@@ -11,8 +11,9 @@
     "@angular/platform-browser-dynamic": "12.2.3",
     "@angular/router": "12.2.3",
     "core-js": "2.6.2",
-    "sass": "^1.38.1",
     "rxjs": "^6.6.7",
+    "sass": "^1.38.1",
+    "tailwindcss": "^2.2.19",
     "zone.js": "~0.11.4"
   },
   "scripts": {
@@ -39,6 +40,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "postcss": "^8.4.6",
     "protractor": "~7.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.3",
